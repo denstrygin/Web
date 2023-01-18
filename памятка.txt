@@ -1,0 +1,27 @@
+CSS
+Bootstrap
+Materialize CSS
+Tailwind CSS
+BEM
+
+JS 
+Event loop
+Prototype
+Методы массивов
+
+Сборщики + пакетные менеджеры
+npm, yarn
+webpack
+parcel
+snowpack
+
+Svelte
+angular
+vue
+reatc
+
+SSR
+Next.js
+nuxt.js
+angular universal
+sapper(svelte)
