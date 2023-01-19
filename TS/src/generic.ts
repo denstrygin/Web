@@ -65,3 +65,31 @@ const strings = new Collection<string>(['I', 'am', 'strings'])
 strings.add('!')
 strings.remove('am')
 console.log(strings.items)
+
+interface Car {
+    modelOfCar: string
+    year: number
+}
+
+function createAndValidateCar(modelOfCar: string, year: number): Car {
+    const car: Partial<Car> = {}
+    if (modelOfCar.length > 3) {
+        car.modelOfCar = modelOfCar
+    }
+    if (year > 3000) {
+        car.year = year
+    }
+    return car as Car
+}
+
+const cars: Readonly<Array<string>> = ['Ford', 'Audi']
+//cars.shift()
+
+const ford: Readonly<Car> = {
+    modelOfCar: 'Ford',
+    year: 2020,
+    numberOfWheels: 0,
+    model: ""
+}
+
+//ford.modelOfCar = 'Ferrari'
