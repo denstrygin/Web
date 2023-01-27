@@ -1,0 +1,21 @@
+@mixin fontStyle($fontName, $size) {
+    font-family: $fontName;
+    font-size: $size;
+}
+
+@mixin flexItems($wrap: wrap, $position: center, $align: center, $diraction: row) {
+    display: flex;
+    justify-content: $position;
+    align-items: $align;
+    flex-direction: $diraction;
+    flex-wrap: $wrap;
+}
+
+@mixin borderStyle($typeBorder: solid, $widthBorder: 1px, $borderColor: #000, $borderRadius: 5px) {
+    border-radius: $borderRadius;
+    border: $widthBorder $typeBorder $borderColor;
+}
+
+@mixin borderPosition($position: border-bottom, $color: #000, $width: 1px) {
+    #{$position}: $width solid $color;
+}

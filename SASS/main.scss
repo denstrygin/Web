@@ -1,0 +1,22 @@
+@use 'variable';
+@use 'mixin';
+@use 'module';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
+
+header {
+    margin: 2% 10%;
+    @include mixin.borderPosition;
+}
+
+.menu {
+    @include mixin.flexItems(wrap, space-between);
+    &__item {
+        @include mixin.fontStyle(variable.$fontName, 22px);
+        text-decoration: none;
+
+        &:hover {
+            color: red;
+        }
+    }
+}

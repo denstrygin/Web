@@ -1,0 +1,19 @@
+@use 'mixin';
+@use 'variable';
+
+.underHeader {
+    @include mixin.flexItems(wrap, space-between);
+    padding: 0 10%;
+    &__left {
+        @include mixin.fontStyle(variable.$fontName, 20px);
+        font-style: bold;
+    }
+    &__center {
+        @include mixin.fontStyle(variable.$fontName, 20px);
+        color: aqua;
+    }
+    &__right {
+        @include mixin.fontStyle(variable.$fontName, 20px);
+        @include mixin.borderStyle;
+    }
+}

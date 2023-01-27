@@ -87,7 +87,7 @@ html {
 }
 
 div:hover .item {
-    cursor: url("./img/cursor-1297941_1280\ 8.png");
+    cursor: url("./img/cursor-1297941_1280\ 8.png"), pointer;
 }
 
 input::placeholder {
@@ -231,7 +231,7 @@ input {
     }
 }
 
-@media screen and (min-width: 900px) and (max-width: 1440px) {
+@media screen and (min-width: 900px) {
     .clientIco {
         display: none;
     }
