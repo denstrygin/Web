@@ -4,6 +4,7 @@ html {
     overflow-y: hidden;
     margin: 0;
     padding: 0;
+    background-image: url('../../public/Pattern.png');
 }
 
 *, *::before, *::after {
@@ -30,6 +31,7 @@ html {
 
 .mainTitle {
     font-size: 36px;
+    color: white;
 }
 
 .catComponent {
@@ -52,6 +54,10 @@ html {
     height: 80px;
     background-color: #F2F2F2;
     z-index: 2;
+}
+
+.topLeftBorder:hover {
+    cursor: pointer;
 }
 
 .presentation {
@@ -82,7 +88,6 @@ html {
 .title {
     margin: 0;
     margin-top: 21px;
-    color: #666666;
     font-size: 16px;
     font-weight: 400;
 }
@@ -142,6 +147,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .buy {
@@ -168,6 +174,14 @@ html {
 
 .normStateCircle {
     background-color: #2EA8E6;
+}
+
+.normTitle {
+    color: #666666;
+}
+
+.selectTitle {
+    color: #E62E7A;
 }
 
 .selectStateBorder {

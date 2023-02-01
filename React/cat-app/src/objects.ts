@@ -12,6 +12,7 @@ export const catFoods: ICatFood[] = [
         footer: 'Чего сидишь? Порадуй котэ, ',
         altfooter: 'Печень утки разварная с артишоками.',
         a: 'купи.',
+        disabled: false,
     },
     {
         title: 'Сказачное заморское яство',
@@ -24,6 +25,7 @@ export const catFoods: ICatFood[] = [
         footer: 'Чего сидишь? Порадуй котэ, ',
         altfooter: 'Головы щучьи с чесночком да свежайщая сёмгушка',
         a: 'купи.',
+        disabled: false,
     },
     {
         title: 'Сказачное заморское яство',
@@ -36,5 +38,6 @@ export const catFoods: ICatFood[] = [
         footer: 'Чего сидишь? Порадуй котэ, ',
         altfooter: 'Филе из циплят с трюфелями в бульоне',
         a: 'купи.',
+        disabled: true,
     },
 ]

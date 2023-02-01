@@ -9,4 +9,5 @@ export interface ICatFood {
     footer: string
     altfooter: string
     a: string
+    disabled: boolean
 }
