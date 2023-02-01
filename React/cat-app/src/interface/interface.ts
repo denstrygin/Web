@@ -11,3 +11,7 @@ export interface ICatFood {
     a: string
     disabled: boolean
 }
+
+export interface ICatComponent {
+    catFood: ICatFood
+}

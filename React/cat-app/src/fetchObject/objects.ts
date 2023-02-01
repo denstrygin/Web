@@ -1,4 +1,4 @@
-import { ICatFood } from "./interface";
+import { ICatFood } from "../interface/interface";
 
 export const catFoods: ICatFood[] = [
     {

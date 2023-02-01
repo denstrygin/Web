@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './styles/styles.css'
-import App from './component/App';
-import { catFoods } from './objects';
+import './style/style.css'
+import App from './component/catComponent';
+import { catFoods } from './fetchObject/objects';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <div className="mainTitle">Ты сегодня покормил кота?</div>
-    <div className="table">
+    <div className="mainContainer">
       <App catFood={ catFoods[0] } />
       <App catFood={ catFoods[1] } />
       <App catFood={ catFoods[2] } />

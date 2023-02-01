@@ -1,60 +1,26 @@
 import React, {useState} from 'react';
-import { ICatFood } from '../interface';
+import { ICatComponent } from '../interface/interface';
+import { edit, addEdit } from '../helper/stringFunction';
 
-interface IProduct {
-  catFood: ICatFood
-}
-
-let flagFirstLeave: boolean = false
-
-function edit(num: number, flag: number): string {
-  let str: string = "";
-  if (flag === 0) {
-    if (num <= 1) {
-      str = `${num} порция`
-    }
-    if (num > 1 && num <= 4) {
-      str = `${num} порции`
-    }
-    if (num > 4) {
-      str = `${num} порций`
-    }
-  } else {
-    if (num <= 1) {
-      str = 'мышь в подарок'
-    }
-    if (num > 1 && num <= 4) {
-      str = `${num} мыши в подарок`
-    }
-    if (num > 4) {
-      str = `${num} мышей в подарок`
-    }
-  }
-  return str;
-}
-
-function addEdit(contain: string): string {
-  return `Печалька, с ${contain} закончился` 
-}
-
-function App({ catFood }: IProduct) {
+function App({ catFood }: ICatComponent) {
   const [selectState, setSelectState] = useState(false)
   const [hoverState, setHoverState] = useState(false)
-  const [disableState] = useState(catFood.disabled)
   
-  function changeHoverState(): void {
-    if (selectState && flagFirstLeave) {
-      setHoverState(prev => !prev)
-    } else if (selectState) {
-      flagFirstLeave = !flagFirstLeave
+  function trueHoverState(): void {
+    if (selectState) {
+      setHoverState(() => true)
+    }
+  }
+
+  function falseHoverState(): void {
+    if (selectState) {
+      setHoverState(() => false)
     }
   }
   
   function changeState(): void {
-    setSelectState(prev => !prev)
-    if (!selectState) {
-      flagFirstLeave = false
-    } else {
+    if (!catFood.disabled) {
+      setSelectState(prev => !prev)
       setHoverState(() => false)
     }
   }
@@ -63,16 +29,24 @@ function App({ catFood }: IProduct) {
   const borderClassName: string = selectState ? 'selectStateBorder' : 'normStateBorder'
   const presentationClassName: string = selectState ? 'selectStatePresentation' : 'normStatePresentation'
   const titleClassName: string = hoverState ? 'selectTitle' : 'normTitle'
-  
+
   const circleClasses: string[] = ['circle', circleClassName]
   const borderClasses: string[] = ['topLeftBorder', borderClassName]
   const presentationClasses: string[] = ['presentation', presentationClassName]
   const titleClasses: string[] = ['title', titleClassName]
 
+  if (catFood.disabled) {
+    borderClasses.push('disabled')
+    presentationClasses.push('disabled')
+  } else {
+    borderClasses.push('pointer')
+    presentationClasses.push('pointer')
+  }
+
   return (
     <div className="catComponent">
-      <div className={borderClasses.join(' ')} onClick={ changeState } onMouseEnter={ changeHoverState } onMouseLeave={ changeHoverState }></div>
-      <div className={presentationClasses.join(' ')} onClick={ changeState } onMouseEnter={ changeHoverState } onMouseLeave={ changeHoverState }>
+      <div className={borderClasses.join(' ')} onClick={ changeState } onMouseEnter={ trueHoverState } onMouseLeave={ falseHoverState }></div>
+      <div className={presentationClasses.join(' ')} onClick={ changeState } onMouseEnter={ trueHoverState } onMouseLeave={ falseHoverState }>
         <div className="container">
           <div className={titleClasses.join(' ')}>
             { hoverState && 'Котэ не одобряет?' }
@@ -88,15 +62,22 @@ function App({ catFood }: IProduct) {
           <div className="number">кг</div>
         </div>
       </div>
-      { !selectState && 
-        <div className="footer"> 
-          {catFood.footer}
+      { !selectState && !catFood.disabled &&
+        <div className="footer normFooter"> 
+          { catFood.footer }
           <span className='buy' onClick={ changeState }> { catFood.a } </span>
         </div>
       }
+
+      { !selectState && catFood.disabled &&
+        <div className="footer disabledFooter"> 
+          { addEdit(catFood.contain) }
+        </div>
+      }
+
       { selectState &&
-        <div className="footer">
-          {catFood.altfooter}
+        <div className="footer normFooter">
+          { catFood.altfooter }
         </div>
       }
     </div>
