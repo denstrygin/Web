@@ -68,13 +68,11 @@ function App({ catFood }: ICatComponent) {
           <span className='buy' onClick={ changeState }> { catFood.a } </span>
         </div>
       }
-
       { !selectState && catFood.disabled &&
         <div className="footer disabledFooter"> 
           { addEdit(catFood.contain) }
         </div>
       }
-
       { selectState &&
         <div className="footer normFooter">
           { catFood.altfooter }
