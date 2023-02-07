@@ -1,0 +1,22 @@
+.ticker {
+    height: 500px;
+    width: 400px;
+    border: #000 solid 1px;
+}
+
+.tickerForm {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.tickerPriButCell {
+    width: inherit;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
