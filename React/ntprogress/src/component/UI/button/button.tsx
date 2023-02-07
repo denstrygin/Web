@@ -1,8 +1,10 @@
+import { IBtn } from '../../../type/interface';
+import {FC} from 'react';
 import './button.css';
 
-function Button({btnClass, children, btnOnClick}: any) {
+const Button: FC<IBtn> = ({btnClass, btnOnClick, btnName}) => {
     return (
-        <button className={ btnClass } onClick = { btnOnClick }>{ children }</button>
+        <button className={ btnClass } onClick = { btnOnClick }>{ btnName }</button>
     )
 }
 

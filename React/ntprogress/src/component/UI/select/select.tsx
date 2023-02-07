@@ -1,11 +1,11 @@
 import classes from './select.module.css';
-import { IOptions } from '../../../interface/interface';
+import { IOptions } from '../../../type/interface';
 
 function Select({ options }: IOptions) {
     return (
         <select className={ classes.select }>
-            { options.map(option => 
-                <option> { option } </option>
+            { options.map((option, index) => 
+                <option key={index}>{ option }</option>
             ) }
         </select>
     )

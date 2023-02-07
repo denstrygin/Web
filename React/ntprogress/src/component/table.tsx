@@ -1,6 +1,7 @@
 import '../style/table.css';
+import React from 'react';
 
-function Table() {
+const Table: React.FC = () => {
     return (
         <div className="table">
 

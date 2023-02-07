@@ -1,5 +1,5 @@
 import {btnClick} from './helper/buttonFucntion'
-import { ITrickerObject } from './interface/interface'
+import { ITrickerObject } from './type/interface'
 
 export const trickerObject: ITrickerObject = {
     select: ['eur_usd', 'eur_rub', 'usd_rub'],

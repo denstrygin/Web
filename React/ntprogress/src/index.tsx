@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Ticker trickerObject={ trickerObject }/>
+    <Ticker select={ trickerObject.select } priButCell={trickerObject.priButCell}/>
     <Table />
   </React.StrictMode>
 );

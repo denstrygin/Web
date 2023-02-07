@@ -1,18 +1,18 @@
 import Price from "./UI/price/price";
 import Button from "./UI/button/button";
+import {FC} from "react";
 import '../style/priButCell.css';
-import {IPriButCellProp} from "../interface/interface";
+import {IPriButCell} from "../type/interface";
 
-function PriButCell({ priButCellProp }: IPriButCellProp) {
+const PriButCell: FC<IPriButCell> = ({ price, btn }) => {
     return (
         <div className="priButCell">
-            <Price> { priButCellProp.price } </Price>
+            <Price> { price } </Price>
             <Button  
-                btnClass={ priButCellProp.btn.btnClass } 
-                btnOnClick={ priButCellProp.btn.btnOnClick }
-            > 
-                { priButCellProp.btn.btnName } 
-            </Button>
+                btnClass={ btn.btnClass } 
+                btnOnClick={ btn.btnOnClick }
+                btnName={ btn.btnName }
+            />  
         </div>
     )
 }
