@@ -1,3 +1,3 @@
 # Web
 
-Репозиторий для хранения обучающих работ в области Web разработки и тестовых заданий от различных компаний
+A repository for storing training papers in the field of Web development and test tasks from various companies
