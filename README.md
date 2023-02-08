@@ -1,3 +1,3 @@
 # Web
 
-A repository for storing training papers in the field of Web development and test tasks from various companies
+Each technology has its own folder. However, the distribution of projects and code is not strict, so the react folder contains projects with redux
