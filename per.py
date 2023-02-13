@@ -21,4 +21,4 @@ for i in product('/+-', repeat=9):
         else:
             total += int(j) * koef
     if total == 200:
-        print(''.join(expression) + '=200'))
+        print(''.join(expression) + '=200')
