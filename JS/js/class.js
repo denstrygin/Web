@@ -25,10 +25,17 @@ class Programmer extends Person {
         super(name, age);
         this.language = language;
     }
+    sayHello() {
+        console.log(`${this.name}, привет!`)
+    }
+    say() {
+        this.sayHello()
+        super.sayHello()
+    }
 }
 
-const proger = new Programmer('Ya', '20', 'JS')
-proger.sayHello()
+const proger = new Programmer('Den', '20', 'JS')
+proger.say()
 
 //Static
 class Car {
@@ -48,3 +55,10 @@ const car2 = new Car(50, 'shcoda')
 console.log(Car.difference(car1, car2))
 console.log(Car.pi)
 console.log(car1.pi) //undefined - так как static не доступен из объекта
+
+//hasOwnProperty
+
+console.log(Object.keys(proger))
+for (const i in proger) {
+    console.log(i)
+}

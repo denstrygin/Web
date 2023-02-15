@@ -52,4 +52,14 @@ const aAddThis = (value) => {
 }
 
 addThis.call("десять", "Значение")
-aAddThis("десять", "Значение")
+aAddThis("десять", "Значение");
+
+//var обладает только глобальной либо функциональной областью виддимости
+function varik() {
+    console.log(a)
+}
+
+(function () {
+    var a = 10;
+    varik()
+})();

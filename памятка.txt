@@ -8,7 +8,6 @@ SemanticUI
 JS 
 Event loop
 Prototype
-Методы массивов
 
 Сборщики + пакетные менеджеры
 npm, yarn
